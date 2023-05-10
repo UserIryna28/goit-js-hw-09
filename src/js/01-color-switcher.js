@@ -13,7 +13,7 @@ function onStartClick() {
     //при натисненні onStartClick відбувається changeBgColor з інтервалом 1с.
 timerId = setInterval(changeBgColor, 1000)
 }
-
+console.log(onStartClick)
 function onStopClick() {
     dataStart.disabled = false
     //якщо кнопка onStopClick натиснена - зупиняємо зміну backgroundColor

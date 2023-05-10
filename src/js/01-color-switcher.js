@@ -1,8 +1,9 @@
 const dataStart = document.querySelector("[data-start]");
 const dataStop = document.querySelector("[data-stop]");
-const body = document.querySelector('body');
+const body = document.body;
 
-const timerId = null
+let timerId = null
+
 dataStart.addEventListener("click", onStartClick) 
 dataStop.addEventListener("click", onStopClick)
 

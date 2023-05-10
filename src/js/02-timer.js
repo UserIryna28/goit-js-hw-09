@@ -10,7 +10,7 @@ const dataHours = document.querySelector("[data-hours]");
 const dataMinutes = document.querySelector("[data-minutes]");
 const dataSeconds = document.querySelector("[data-seconds]");
 const dataFlatpickr = document.querySelector("#datetime-picker")
-
+btnStart.addEventListener("click", onClickBtnStart)
 
 const options = {
     // властивість вмикає засіб вибору часу
@@ -35,6 +35,12 @@ const options = {
 // отримуємо дату за допомогою бібліотеки
 const flatpickrDataFlatpick = flatpickr(dataFlatpickr, options); 
 //Для підрахунку значень використовуй готову функцію convertMs, де ms - різниця між кінцевою і поточною датою в мілісекундах.
+
+// function onClickBtnStart()  {
+//     setInterval(() =>
+    
+// },1000)
+
 
 function convertMs(ms) {
   const second = 1000;

@@ -1,8 +1,6 @@
 import flatpickr from "flatpickr"
 import "flatpickr/dist/flatpickr.min.css"
-
-// дата, яку користувач вибирає
-let selectedDate = null 
+ 
 let timerId = null
 let timeDifference = 0;
 
@@ -29,7 +27,7 @@ const options = {
           window.alert("Please choose a date in the future")
       } else {
         //  якщо вибрана дата selectedDate = aбо більша за перший елемент з масиву обраних дат  - кнопка btnStart стає активною
-            selectedDate = selectedDates[0] || selectedDate > selectedDates[0]
+            
           btnStart.disabled = false
       }
   },
@@ -40,9 +38,10 @@ btnStart.addEventListener("click", onClickBtnStart)
 
 function onClickBtnStart () {
  timerId = setInterval(() => {
-  timeDifference = selectedDates - selectedDate
+  timeDifference = flatpickrDataFlatpick.selectedDates[0] - new Date()
    if (timeDifference > 0) {
-     window.alert("Ok, start timer")
+     updateTimerInterface(convertMs(timeDifference))
+    btnStart.disabled = true;
   } 
  }, 1000);
  };

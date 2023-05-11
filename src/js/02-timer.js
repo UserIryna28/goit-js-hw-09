@@ -38,14 +38,14 @@ const options = {
 const flatpickrDataFlatpick = flatpickr(dataFlatpickr, options); 
 btnStart.addEventListener("click", onClickBtnStart)
 
-onClickBtnStart.addEventListener("click", () => {
+function onClickBtnStart () {
  timerId = setInterval(() => {
   timeDifference = selectedDates - selectedDate
    if (timeDifference > 0) {
      window.alert("Ok, start timer")
   } 
  }, 1000);
- });
+ };
 //Для підрахунку значень використовуй готову функцію convertMs, де ms - різниця між кінцевою і поточною датою в мілісекундах.
 function convertMs(ms) {
   const second = 1000;

@@ -3,6 +3,8 @@ import "flatpickr/dist/flatpickr.min.css"
 
 // дата, яку користувач вибирає
 let selectedDate = null 
+let timerId = null
+let timeDifference = 0;
 
 const btnStart = document.querySelector("[data-start]");
 const dataDays = document.querySelector("[data-days]");
@@ -34,14 +36,16 @@ const options = {
 };
 // отримуємо дату за допомогою бібліотеки
 const flatpickrDataFlatpick = flatpickr(dataFlatpickr, options); 
+
+onClickBtnStart.addEventListener("click", () => {
+  timerId = setInterval(() => {
+   timeDifference = selectedDate - selectedDates
+   if (timeDifference > 0){
+window.alert ("Ok, start timer")
+  } 
+}, 1000);
+});
 //Для підрахунку значень використовуй готову функцію convertMs, де ms - різниця між кінцевою і поточною датою в мілісекундах.
-
-// function onClickBtnStart()  {
-//     setInterval(() =>
-    
-// },1000)
-
-
 function convertMs(ms) {
   const second = 1000;
   const minute = second * 60;

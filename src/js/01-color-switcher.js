@@ -4,8 +4,6 @@ const body = document.body;
 
 let timerId = null
 
-dataStart.addEventListener("click", onStartClick) 
-dataStop.addEventListener("click", onStopClick)
 
 function onStartClick() {
     //якщо кнопка onStartClick натиснена, disabled забороняє повторне натискання
@@ -22,7 +20,7 @@ function onStopClick() {
 
 function changeBgColor() {
     // для генерування випадкового кольору використовуємо функцію getRandomHexColor
-    const color = getRandomHexColor
+    const color = getRandomHexColor()
     body.style.backgroundColor = color
 }
 

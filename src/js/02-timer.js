@@ -12,7 +12,7 @@ const dataHours = document.querySelector("[data-hours]");
 const dataMinutes = document.querySelector("[data-minutes]");
 const dataSeconds = document.querySelector("[data-seconds]");
 const dataFlatpickr = document.querySelector("#datetime-picker")
-btnStart.addEventListener("click", onClickBtnStart)
+
 
 const options = {
     // властивість вмикає засіб вибору часу
@@ -36,8 +36,9 @@ const options = {
 };
 // отримуємо дату за допомогою бібліотеки
 const flatpickrDataFlatpick = flatpickr(dataFlatpickr, options); 
+btnStart.addEventListener("click", onClickBtnStart)
 
-btnStart.addEventListener("click", () => {
+onClickBtnStart.addEventListener("click", () => {
  timerId = setInterval(() => {
   timeDifference = selectedDates - selectedDate
    if (timeDifference > 0) {
